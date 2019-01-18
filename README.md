@@ -27,7 +27,7 @@ Password:demodemo123
 
  1) 實現爬蟲自動定時抓取。
 > 定時抓取程式為src/RunScheduler.py<br/>
-以requests.get(Update_News_URL)方式定時更新新聞置資料庫。
+以requests.get(Update_News_URL)方式定時更新新聞至資料庫，<br/>也可以用crontab實現，只是我剛好有之前寫好的Scheduler程式。
 
  2) 每當抓取到新的新聞時立即通知頁面。
 > 同樣位於[新聞列表主頁面](https://lanmor-py-demo-lanmorop01.c9users.io/NewsList)，<br/>

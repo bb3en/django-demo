@@ -2,7 +2,7 @@
   $(function() {
     
     GetNewsList();
-    setInterval(function() { GetNewsList(); }, 10000);
+    setInterval(function() { GetNewsList(); }, 60000);
 
   });
 
