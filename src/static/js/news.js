@@ -1,3 +1,11 @@
+  var NowID ="0"
+  $(function() {
+    
+    GetNewsList();
+    setInterval(function() { GetNewsList(); }, 10000);
+
+  });
+
 function Showyourself() {
     console.log('Hey!')
 }

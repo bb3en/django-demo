@@ -11,6 +11,7 @@ class TestsqlConfig(AppConfig):
     name = 'TestSQL'
     
 def getNewsRawData():
+    ##獲取焦點新聞，並解析。
     url = getNewsUrl()
     response = rq.get(url) 
     html_doc = response.text 
@@ -32,7 +33,7 @@ def showNews():
     return NewsShow
     
 def getNewsPublishTime(url):
-    
+    #因為發表時間位於該新聞內，所以要額外爬該新聞。
     response = rq.get(url) 
     html_doc = response.text 
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -40,6 +41,7 @@ def getNewsPublishTime(url):
     return str(soup1[0].span.text)
     
 def getNewsUrl():
+    #獲取焦點新聞的Url
     url = 'https://nba.udn.com/nba/index'
     response = rq.get(url) 
     html_doc = response.text 
