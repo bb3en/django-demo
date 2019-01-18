@@ -14,14 +14,23 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from GetNews.views import home,GetNews
+from rest_framework.routers import DefaultRouter
+from GetNews.views import home,ShowNews,UpdateNews,NewsViewSet,NewList
+from django.conf.urls.static import static
+from django.conf import settings
+
+router = DefaultRouter()
+router.register(r'news', NewsViewSet)
 
 urlpatterns = [
-    url(r'^GetNews/', GetNews, name="GetNews"),
+    url(r'^UpdateNBANews/', UpdateNews, name="UpdateNews"),
+    url(r'^NewsList/', NewList, name="NewList"),
     url(r'^$', home, name="home"),
     url(r'^admin/', admin.site.urls),
-    
+    url(r'^api/', include(router.urls))
    
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
