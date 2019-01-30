@@ -1,6 +1,6 @@
 ## py-django-demo
 
-## QA
+## Q&A
 第一次使用django框架，對於架構還是懵懵懂懂，有不足之處也請多指教。
 
  1) **抓取 https://nba.udn.com/nba/index?gr=www 中的焦點新聞**
